@@ -126,6 +126,7 @@ class RangeSet{
 
     /*
         order of node's R
+        nodes (intervals) are sorted by the order of R
     */
     bool CompareNode(SplayNode *a , SplayNode *b ){return a->R <= b->R;}
  
@@ -277,7 +278,8 @@ class RangeSet{
         return m_Root->SubTreeSize;
     }
 
-    // get copy object of [i]th node(interval)
+    // get copy object of [i]th node (interval)
+    // nodes (intervals) are sorted by the order of R
     SplayNode get(int i){
         assert(0 <= i && i < size());
         m_Root = get_sub(i,m_Root);
@@ -338,7 +340,7 @@ class RangeSet{
         return min(r1,r2)-max(l1,l2);
     }
     
-    // find a existing interval which [lef,rig) overlaps
+    // find one of existing intervals which [lef,rig) overlaps
     int find_cross(T lef , T rig){
         assert(lef < rig);
         int it_ = upper_bound(lef);
@@ -384,7 +386,7 @@ class RangeSet{
     }
  
     
-    // erase interval [lef,rig)
+    // erase intersection of interval [lef,rig) and existing intervals
     void erase(T lef , T rig){
         assert(lef<rig);
         SplayNode x;
