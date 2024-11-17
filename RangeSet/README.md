@@ -59,9 +59,9 @@ Copyright (c) 2024 NokonoKotlin Released under the MIT license(https://opensourc
 ## RangeSet の中身
 ### 課題
 
-$N$ 個の区間 $[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N) $ と、$M$ 個の区間 $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M) $ がある。
+$N$ 個の区間 $[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N) $ と、$M$ 個の区間 $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M)$ がある。
 
-$[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N) $ が成す数直線上の領域と $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M) $ が成す数直線上の領域の共通部分の長さを答えよ。
+$[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N)$ が成す数直線上の領域と $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M)$ が成す数直線上の領域の共通部分の長さを答えよ。
 
 
 #### 制約
