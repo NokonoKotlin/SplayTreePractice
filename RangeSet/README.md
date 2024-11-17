@@ -58,8 +58,8 @@ Copyright (c) 2024 NokonoKotlin Released under the MIT license(https://opensourc
 
 ## RangeSet の中身
 ### 課題
-$N$ 個の区間 $[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N) $ と、$M$ 個の区間 $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M) $ がある。
 
+$N$ 個の区間 $[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N) $ と、$M$ 個の区間 $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M) $ がある。
 
 $[L_1,R_1) , [L_2,R_2) , \dots , [L_N,R_N) $ が成す数直線上の領域と $[S_1,T_1) , [S_2,T_2) , \dots , [S_M,T_M) $ が成す数直線上の領域の共通部分の長さを答えよ。
 
@@ -91,10 +91,10 @@ $x$ をカバーするノード (区間) にアクセスすることを考えま
 
 <img src = "./RangeSetImages/RangeSet.003.jpeg" class = "StandardImageStyle"><br>
 
-#### 2. 部分木のノードの $R-L$ の総和を集約として持つ。<p>
+#### 2. 部分木のノードの $R-L$ の総和を集約として持つ。
+
 $R-L$ と言うのは、区間 $[L,R)$ の長さです。これを集約しておくことで、以下のクエリに応えることができます。
 - 管理している区間で、区間 $[a,b)$ と重複する部分の長さを答えよ。
- 
 
 <b>$a,b$ がどちらも同じ区間に含まれる場合は $b-a$ が答えです。</b>よって、そうでない場合を考えます。
 
@@ -102,12 +102,13 @@ $R-L$ と言うのは、区間 $[L,R)$ の長さです。これを集約して�
 
 <img src = "./RangeSetImages/RangeSet.004.jpeg" class = "StandardImageStyle"><br>
 
-$a$ を含む区間と $[a,b)$ の重複部分の長さと、$b$ を含む区間と $[a,b)$ の重複部分の長さを足し合わせることで答えがわかります。
+$a$ を含む区間と $[a,b)$ の重複部分の長さと $b$ を含む区間と $[a,b)$ の重複部分の長さを足し合わせることで答えがわかります。
 
 <img src = "./RangeSetImages/RangeSet.005.jpeg" class = "StandardImageStyle"><br>
 
 
 #### 3. 全ての区間は互いに重複しない。& 4. 隣接する区間はマージする。
+
 これらの処理は、区間を追加する操作の時に行うことにします。以下は区間 $[3,7)$ を新たに追加する様子です。
 
 <img src = "./RangeSetImages/RangeSet.006.jpeg" class = "StandardImageStyle"><br>
@@ -128,6 +129,7 @@ $a$ を含む区間と $[a,b)$ の重複部分の長さと、$b$ を含む区間
 
 
 #### 区間の削除
+
 管理している区間から、$[a,b)$ と重なる部分だけを削除します。
 
 この時、追加操作の時に重複していた部分も削除されることに注意してください。
